@@ -17,30 +17,14 @@ namespace App.Core.UseCases
             _repository = Repository;
         }
 
-
-        public IEnumerable<T> AddRange(IEnumerable<T> Data)
-        {
-            throw new NotImplementedException();
-        }
-
         public Task<IEnumerable<T>> AddRangeAsync(IEnumerable<T> Data)
         {
-            throw new NotImplementedException();
-        }
-
-        public int Count()
-        {
-            throw new NotImplementedException();
+            return _repository.AddRangeAsync(Data);
         }
 
         public Task<int> CountAsync()
         {
-            throw new NotImplementedException();
-        }
-
-        public T Create(T Data)
-        {
-            return _repository.Create(Data);
+            return _repository.CountAsync();
         }
 
         public Task<T> CreateAsync(T Data)
@@ -48,114 +32,54 @@ namespace App.Core.UseCases
             return _repository.CreateAsync(Data);
         }
 
-        public T Delete(T Data)
-        {
-            throw new NotImplementedException();
-        }
-
         public Task<T> DeleteAsync(T Data)
         {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<T> DeleteRange(IEnumerable<T> Data)
-        {
-            throw new NotImplementedException();
+            return _repository.DeleteAsync(Data);
         }
 
         public Task<IEnumerable<T>> DeleteRangeAsync(IEnumerable<T> Data)
         {
-            throw new NotImplementedException();
-        }
-
-        public bool Exists(Expression<Func<T, bool>> matchitem)
-        {
-            throw new NotImplementedException();
+            return _repository.DeleteRangeAsync(Data);
         }
 
         public Task<bool> ExistsAsync(Expression<Func<T, bool>> matchitem)
         {
-            throw new NotImplementedException();
-        }
-
-        public T Find(Expression<Func<T, bool>> matchitem)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<T> FindAll(Expression<Func<T, bool>> matchitem)
-        {
-            throw new NotImplementedException();
+            return _repository.ExistAsync(matchitem);
         }
 
         public Task<IEnumerable<T>> FindAllAsync(Expression<Func<T, bool>> matchitem)
         {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<T> FindAllInclude(Expression<Func<T, bool>> matchitem, Expression<Func<T, object>> criteria)
-        {
-            throw new NotImplementedException();
+            return _repository.FindAllAsync(matchitem);
         }
 
         public Task<IEnumerable<T>> FindAllIncludeAsync(Expression<Func<T, bool>> matchitem, Expression<Func<T, object>> criteria)
         {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<T> FindAllTake(int count)
-        {
-            throw new NotImplementedException();
+            return _repository.FindAllIncludeAsync(matchitem, criteria);
         }
 
         public Task<IEnumerable<T>> FindAllTakeAsync(int count)
         {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<T> FindAllWhere(Expression<Func<T, bool>> matchitem)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<T> FindAllWhereTake(Expression<Func<T, bool>> matchitem, int count)
-        {
-            throw new NotImplementedException();
+            return _repository.FindAllTakeAsync(count);
         }
 
         public Task<T> FindAsync(Expression<Func<T, bool>> matchitem)
         {
-            throw new NotImplementedException();
-        }
-
-        public T FindInclude(Expression<Func<T, bool>> matchitem, Expression<Func<T, object>> criteria)
-        {
-            throw new NotImplementedException();
+            return _repository.FindAsync(matchitem);
         }
 
         public Task<T> FindIncludeAsync(Expression<Func<T, bool>> matchitem, Expression<Func<T, object>> criteria)
         {
-            throw new NotImplementedException();
-        }
-
-        public T Read(T Data)
-        {
-            throw new NotImplementedException();
+            return _repository.FindIncludeAsync(matchitem, criteria);
         }
 
         public Task<T> ReadAsync(T Data)
         {
-            throw new NotImplementedException();
-        }
-
-        public T Update(T Data)
-        {
-            throw new NotImplementedException();
+            return _repository.ReadAsync(Data);
         }
 
         public Task<T> UpdateAsync(T Data)
         {
-            throw new NotImplementedException();
+            return _repository.UpdateAsync(Data);
         }
     }
 }
